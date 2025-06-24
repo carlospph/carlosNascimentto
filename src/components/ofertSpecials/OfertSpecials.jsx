@@ -1,4 +1,4 @@
-import { Button } from "../button/Button"; 
+import { ButtonDefault } from "../button/ButtonDefault"; 
 import styles from "./OfertSpecial.module.css"; 
 
 export const OfertSpecials = () => {
@@ -19,9 +19,9 @@ export const OfertSpecials = () => {
             Aproveite nossa OFERTA ESPECIAL por tempo limitado! Todos os nossos produtos premium estão com 50% de desconto até o final desta semana. Esta é uma oportunidade única para adquirir soluções completas pelo melhor preço do ano.
           </p>
           
-          <Button className="btn">
+          <ButtonDefault className="btn">
             Ver oferta
-          </Button>
+          </ButtonDefault>
         </div>
       </div>
    );

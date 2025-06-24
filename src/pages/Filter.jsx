@@ -2,59 +2,38 @@ import React from "react";
 import { Card } from "../components/card/Card";
 import "./Filter.css";
 import { ItemFilter } from "../components/itemFilter/ItemFilter";
-// Você provavelmente pode remover qualquer importação de CSS aqui
 
 export const Filter = () => {
   return (
     <div className="container-all-filter">
       <div className="container-filter-cards">
         <div className="sidebar">
-          <h3>Pesquisar por: </h3>
+          <h4>Pesquisar por: </h4>
 
-          <h4>Marca</h4>
+          <h5>Marca</h5>
+          <ItemFilter label={"Nike"} nameCategory={"Tênis"}/>
+          <ItemFilter label={"Olimpikus"} nameCategory={"Tênis"}/>
+          <ItemFilter label={"Mizuno"} nameCategory={"Tênis"}/>
+          <ItemFilter label={"Newbalance"} nameCategory={"Tênis"}/>
 
-          <div className="dflex">
-            <input type="checkbox" name="brand" id="nike-brand" />
-            <label htmlFor="nike-brand">Nike</label>
-          </div>
+          <h5>Categoria</h5>
+          <ItemFilter label={"Calçados"} nameCategory={"tipoCategoria"}/>
+          <ItemFilter label={"Roupas"} nameCategory={"tipoCategoria"}/>
+          <ItemFilter label={"Acessórios"} nameCategory={"tipoCategoria"}/>
 
-          <div className="dflex">
-            <input type="checkbox" name="brand" id="adidas-brand" />
-            <label htmlFor="adidas-brand">Adidas</label>
-          </div>
+          <h5>Cores</h5>
+          <ItemFilter label={"Branco"} nameCategory={"tipoModelo"}/>
+          <ItemFilter label={"Escuras"} nameCategory={"tipoModelo"}/>
+          <ItemFilter label={"Coloridos"} nameCategory={"tipoModelo"}/>
 
-          <div className="dflex">
-            <input type="checkbox" name="brand" id="puma-brand" />
-            <label htmlFor="puma-brand">Puma</label>
-          </div>
-
-          <div className="dflex">
-            <input type="checkbox" name="brand" id="reebok-brand" />
-            <label htmlFor="reebok-brand">Reebok</label>
-          </div>
-
-          {/* --- Filtro por Categoria --- */}
-          <h4>Categorias</h4>
-
+{/* 
           <div className="dflex">
             <input type="checkbox" name="category" id="shoes-category" />
             <label htmlFor="shoes-category">Calçados</label>
-          </div>
+          </div> */}
 
-          <div className="dflex">
-            <input type="checkbox" name="category" id="apparel-category" />
-            <label htmlFor="apparel-category">Vestuário</label>
-          </div>
+           
 
-          <div className="dflex">
-            <input type="checkbox" name="category" id="accessories-category" />
-            <label htmlFor="accessories-category">Acessórios</label>
-          </div>
-
-          <div className="dflex">
-            <input type="checkbox" name="category" id="sportswear-category" />
-            <label htmlFor="sportswear-category">Esportivo</label>
-          </div>
         </div>
 
         <button className="btn-filter--icone">

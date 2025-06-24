@@ -1,10 +1,10 @@
-import "../../pages/Filter.css";
+import "./ItemFilter.css";
 
-export function ItemFilter() {
+export function ItemFilter({ label, nameCategory}) {
   return (
-    <div className="dflex">
-      <input type="checkbox" name="marca" id="nome" />
-      <label htmlFor="nome">Nome</label>
+    <div className="dflex-check">
+        <input type="checkbox" name={nameCategory} id={label}/>
+        <label htmlFor={label} className="label-filter">{label}</label>
     </div>
   );
 }
