@@ -1,6 +1,7 @@
 import './Header.css';
 import logotop from "../../assets/icones/logo-header.svg";
 import { ActionUser } from "../actionUser/ActionUser";
+import { Link } from "react-router-dom";
 
 import { useState } from "react";
 import { DesktopMenu } from "./DesktopMenu";
@@ -20,17 +21,19 @@ export const Headerversion = () => {
 
                 <i className="fa-solid fa-bars hamburguer" onClick={() => setMenu(!menu)} ></i>
 
-                <img src={logotop} alt="logomarca" className='logo'/>
+                <Link to="/">
+                    <img src={logotop} alt="logomarca" className='logo' />
+                </Link>
 
 
                 {/* Campo pesquisa para mobile  */}
 
-               {search && (
+                {search && (
                     <div className="field">
                         <input type="text" placeholder="Buscar produtos" />
                         <i className="fa-solid fa-search"></i>
                     </div>
-                )} 
+                )}
 
                 {/* Pesquisa para computadores | tablet  */}
                 <div className="onlyComputer">
@@ -51,11 +54,11 @@ export const Headerversion = () => {
             </div>
 
 
-             {menu && (
+            {menu && (
                 <div className="onlyMobile">
-                    <MobileMenu/>
+                    <MobileMenu />
                 </div>
-            )}  
+            )}
 
         </header>
     )

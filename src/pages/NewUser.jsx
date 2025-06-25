@@ -1,4 +1,5 @@
 import FormCadastro from "../components/formCadastro/FormCadastro.jsx";
+import { ScrollPage } from "../components/scrollPage/ScrollPage.jsx";
 import { Section } from "../components/section/Section";
 import Layout from "./Layout.jsx";
 import styled from 'styled-components';
@@ -11,6 +12,9 @@ const Container = styled.div`
 
 export const NewUser = () => {
     return(
+<>
+<ScrollPage/>
+
          <Layout>
             <Container>
                 <Section 
@@ -24,6 +28,8 @@ export const NewUser = () => {
 
             </Container>
         </Layout>
+        </>
+
      )
      
 }

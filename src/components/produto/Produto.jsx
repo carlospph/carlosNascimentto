@@ -5,6 +5,7 @@ import produtos from "./dados.json";
 
 import styled from "styled-components";
 import { Titulo } from "./Titulo";
+import { ProductsRelacionations } from "../productsRelacionations/ProductsRelacionations";
 
 const Container = styled.div`
   border-radius: 5px;
@@ -289,8 +290,11 @@ export const Produto = () => {
             <ContainerAdd>
               <Buy>Comprar</Buy>
             </ContainerAdd>
-          </Datas>
+          </Datas> 
         </Container>
+
+        <ProductsRelacionations/>
+        
       </Layout>
     </>
   );

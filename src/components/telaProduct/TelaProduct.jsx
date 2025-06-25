@@ -1,7 +1,7 @@
-import Layout from "../../pages/Layout";
 import { useParams } from 'react-router-dom';
 import produtos from './dados.json';
 import { ProductsRelacionations } from '../productsRelacionations/ProductsRelacionations';
+import styled from 'styled-components';
 
 const RowOne = styled.div`
     padding: 1rem;
@@ -29,7 +29,9 @@ const RowTwo = styled.div`
 `;
 
 const ContainerScreen = styled.div`
-
+    background-color:white;
+    border:7px solid red;
+    padding:1rem;
 `;
 
 const Buttons = styled.div`
@@ -265,11 +267,11 @@ const Comprar = styled.button`
 
 export function TelaProduct() {
     const params = useParams();
-	const produto = produtos.find((produto)=> { return produto.id === params.id});
+    const produto = produtos.find((produto) => { return produto.id === params.id });
 
-	if(!produto){
-		<h2>Produto não localizado</h2>
-	}
+    if (!produto) {
+        <h2>Produto não localizado</h2>
+    }
 
     const [UrlImage, setUrlImage] = useState('https://images.pexels.com/photos/6481840/pexels-photo-6481840.jpeg');
 
@@ -277,7 +279,7 @@ export function TelaProduct() {
     const thumbnail2Url = 'https://images.pexels.com/photos/6481840/pexels-photo-6481840.jpeg';
 
     const thumbnail3Url = 'https://images.unsplash.com/photo-1695753648663-72cc4dd99449?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dhttps://images.pexels.com/photos/6481840/pexels-photo-6481840.jpeg';
- 
+
 
     function handle1() {
         setUrlImage(thumbnail1Url);
@@ -289,12 +291,10 @@ export function TelaProduct() {
 
     function handle3() {
         setUrlImage(thumbnail3Url);
-    } 
-
+    }
 
     return (
-
-        <>
+        <div style={{background: 'white'}}>
             <RowOne>
                 <ContainerScreen>
                     <Figure>
@@ -313,8 +313,6 @@ export function TelaProduct() {
                         <Btn onClick={handle3}>
                             <ThumbnailImage src={thumbnail3Url} alt="Thumbnail Verde" />
                         </Btn>
-
-                
                     </Buttons>
                 </ContainerScreen>
 
@@ -341,19 +339,19 @@ export function TelaProduct() {
                     </AvaliationUser>
 
                     <ContainerPrice>
-                    <Price>
-                       {produto.price}
-                    </Price>
+                        <Price>
+                            {produto.price}
+                        </Price>
 
-                    <PriceOld>
-                        {produto.priceOld}
-                    </PriceOld>
+                        <PriceOld>
+                            {produto.priceOld}
+                        </PriceOld>
                     </ContainerPrice>
 
                     <Description>
                         <h4>Descrição do produto</h4>
                         <p>
-                           {produto.description}
+                            {produto.description}
                         </p>
                     </Description>
 
@@ -385,9 +383,9 @@ export function TelaProduct() {
 
             <RowTwo>
 
-            <ProductsRelacionations />
+                <ProductsRelacionations/>
 
             </RowTwo>
-        </>
+        </div>
     );
 }

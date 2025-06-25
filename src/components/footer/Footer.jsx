@@ -1,17 +1,24 @@
 import styles from './Footer.module.css';
 import logo from '../../assets/icones/logo__bottom.png';
+import { Link } from 'react-router-dom';
+import { ScrollPage } from '../scrollPage/ScrollPage';
 
 export const Footer = () => {
   return (
+    
     <section className="bg-dark">
+      <ScrollPage/>
       <div className="container py-3 text-white">
         <div className={styles.row}>
           <div className={styles.footer__lema}>
-            <img
+           <Link to="/">  
+           <img
               src={logo}
               alt="Logo do rodapé da página - Digital College - imagem em branco"
               className={styles.logo__bottom}
             />
+           </Link>
+            
 
             <p>
               Por: Antonio Carlos Pereira do Nascimento - PcD oculta. Projeto final para obtenção da nota do curso stack full Geração Tech 2.0.

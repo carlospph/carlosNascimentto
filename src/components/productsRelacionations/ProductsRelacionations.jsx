@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import dados from '../../components/produto/relacionados.json';
 
 const Container = styled.div`
     display: grid;
@@ -91,63 +93,32 @@ const Btn = styled.button`
 `;
 
 export function ProductsRelacionations() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Animação suave
+      });
     return (
-        <>
+        <div className="container">
             <TitleSection>Produtos Relacionados</TitleSection>
+            <div> 
+            </div>
 
             <Container>
-                <Card>
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1705096953495-8ea06879b986?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE1fHx8ZW58MHx8fHx8" alt="Tênis Urbano Estiloso" />
-                    </div>
-                    <BodyCard>
-                        <TitleCard>Tênis Urbano Estiloso</TitleCard>
-                        <DescriptionCard>
-                            Perfeito para quem busca um visual moderno e o máximo conforto para o dia a dia na cidade.
-                        </DescriptionCard>
-                    </BodyCard>
-                    <Btn>Comprar</Btn>
-                </Card>
+                {dados.map((item) => (
+                    <Link to={`/produto/${item.id}`}>
+                    <Card>
+                        <div><img src={item.imagem} alt={item.nome} /></div>
+                        <BodyCard>
+                            <TitleCard>{item.nome}</TitleCard>
+                            <DescriptionCard>{item.descricao}</DescriptionCard>
+                        </BodyCard>
+                        <div><Btn>Comprar</Btn></div>
+                    </Card>
+                    </Link>
+                ))}
 
-                <Card>
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1704677982215-a2248af6009b?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tênis de Corrida Leve" />
-                    </div>
-                    <BodyCard>
-                        <TitleCard>Tênis de Corrida Leve</TitleCard>
-                        <DescriptionCard>
-                            Desenvolvido para alta performance, este tênis oferece leveza e amortecimento superior para suas corridas.
-                        </DescriptionCard>
-                    </BodyCard>
-                    <Btn>Comprar</Btn>
-                </Card>
-
-                <Card>
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1699198489130-2e02f3726612?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDI2fHx8ZW58MHx8fHx8" alt="Tênis Casual Clássico" />
-                    </div>
-                    <BodyCard>
-                        <TitleCard>Tênis Casual Clássico</TitleCard>
-                        <DescriptionCard>
-                            Um ícone de estilo, ideal para combinar com qualquer look e garantir conforto em todas as ocasiões.
-                        </DescriptionCard>
-                    </BodyCard>
-                    <Btn>Comprar</Btn>
-                </Card>
-
-                <Card>
-                    <div>
-                        <img src="https://images.unsplash.com/photo-1644426059269-36535c7c00fc?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tênis para Aventura" />
-                    </div>
-                    <BodyCard>
-                        <TitleCard>Tênis para Aventura</TitleCard>
-                        <DescriptionCard>
-                            Construído para trilhas e atividades ao ar livre, oferece tração e durabilidade em qualquer terreno.
-                        </DescriptionCard>
-                    </BodyCard>
-                    <Btn>Comprar</Btn>
-                </Card>
             </Container>
-        </>
+
+        </div>
     )
 }

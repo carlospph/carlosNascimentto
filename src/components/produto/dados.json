@@ -60,7 +60,7 @@
         "price": "R$345,00",
         "sizes": ["Juvenil", "Adulto"],
         "colors": ["Dourado", "Prata"],
-        "fotosAdd": ["/relogio_feminino.jpg", "/relogio__feminino2.jpg", "/relogio__feminino3.jpg"]
+        "fotosAdd": ["/relogio__feminino.jpg", "/relogio__feminino2.jpg", "/relogio__feminino3.jpg"]
     },
     {
         "id": "prod1006",

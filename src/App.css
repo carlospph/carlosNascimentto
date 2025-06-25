@@ -128,3 +128,7 @@ input[type="checkbox"] {
 label {
   font-weight: 300;
 }
+
+.image__erro{
+  width: 300px;
+}

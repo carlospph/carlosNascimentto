@@ -9,54 +9,56 @@ import { OfertSpecials } from "../components/ofertSpecials/OfertSpecials";
 
 import { Sliders } from "../components/slider/Sliders";
 import { Filter } from './Filter';
+import { ScrollPage } from '../components/scrollPage/ScrollPage';
 export const Home = () => {
   return (
     <div>
       <Layout>
 
- 
-    <main className='wrapper'>
-        <Sliders />
+        <ScrollPage />
 
-        <Section
-          title="Coleção em destaque"
-          alinhamento="text-left"
-          size="fontStyle"
-        >
-          <Collections />
-        </Section>
+        <main className='wrapper'>
+          <Sliders />
 
-        <Section
-          title="Coleção em destaque"
-          alinhamento="text-center"
-          size="fontStyle"
-        >
-          <DestaqueIcones />
-        </Section>
+          <Section
+            title="Coleção em destaque"
+            alinhamento="text-left"
+            size="fontStyle"
+          >
+            <Collections />
+          </Section>
 
-
-        <Section
-          title="Coleção em destaque"
-          alinhamento="text-left"
-          size="fontStyle"
-        >
-
-          <div className={styles.container__cards}>
-            <Card />
-          </div>
+          <Section
+            title="Coleção em destaque"
+            alinhamento="text-center"
+            size="fontStyle"
+          >
+            <DestaqueIcones />
+          </Section>
 
 
-        </Section>
+          <Section
+            title="Coleção em destaque"
+            alinhamento="text-left"
+            size="fontStyle"
+          >
 
-        <Section
-          title="Coleção em destaque"
-          alinhamento="text-left"
-          size="fontStyle"
-        >
-          <OfertSpecials />
+            <div className={styles.container__cards}>
+              <Card />
+            </div>
 
-        </Section>
-  </main>
+
+          </Section>
+
+          <Section
+            title="Coleção em destaque"
+            alinhamento="text-left"
+            size="fontStyle"
+          >
+            <OfertSpecials />
+
+          </Section>
+        </main>
 
       </Layout>
     </div>
